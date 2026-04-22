@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speak & Learn - Pronunciation Practice</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="https://free-interactive-learning-for-kids.netlify.app/#apps" class="home-button" aria-label="Go to Home">🏠 Home</a>
+    <div class="container">
+        <header>
+            <h1>Speak & Learn</h1>
+            <p class="subtitle">Practice words, sentences, and definitions!</p>
+        </header>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRWCWN0VY">
+        </script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-ZRWCWN0VY');
+        </script>   
+
+        <main>
+            <section class="navigation-section">
+                <h2>Word <span id="word-number">1</span> of <span id="total-words">N</span></h2>
+           
+                <div class="level-selector">
+                    <label for="level-select">Choose Level: </label>
+                    <select name="levels" id="level-select">
+                        <option value="all">All Levels</option>
+                        <option value="1">Level 1</option>
+                        <option value="2">Level 2</option>
+                        <option value="3">Level 3</option>
+                        <option value="4">Level 4</option>
+                        <option value="5">Level 5</option>
+                        <option value="6">Level 6</option>
+                        <option value="7">Level 7</option>
+                    </select>
+                </div>
+                <div class="navigation">
+                    <button id="prev-word" class="nav-button">Previous</button>
+                    <button id="next-word" class="nav-button">Next</button>
+                </div>
+            </section>
+
+            <section class="practice-section word-practice">
+                <h2>1. Practice the Word</h2>
+                <div class="display-area">
+                    <p id="current-word" class="current-text word-text">Hello</p>
+                </div>
+                <div class="audio-controls">
+                    <button class="action-button listen-btn" data-section="word">🔊 Listen</button>
+                    <button class="action-button start-btn" data-section="word">🎤 Start Speaking</button>
+                    <button class="action-button stop-btn" data-section="word" disabled>⏹️ Stop Speaking</button>
+                    <button class="action-button playback-btn" data-section="word" disabled>▶️ Play My Voice</button>
+                </div>
+                <div class="result-container">
+                    <h3>I heard you say:</h3>
+                    <div class="speech-result" data-section="word">
+                        <p class="placeholder">Your words will appear here.</p>
+                    </div>
+                </div>
+                <div class="feedback-container">
+                    <div class="feedback-message" data-section="word"></div>
+                </div>
+            </section>
+
+            <section class="practice-section sentence-practice">
+                <h2>2. Practice the Sentence</h2>
+                <div class="display-area">
+                    <p id="current-sentence" class="current-text sentence-text">Say 'Hello' when you see Grandma.</p>
+                </div>
+                <div class="audio-controls">
+                    <button class="action-button listen-btn" data-section="sentence">🔊 Listen</button>
+                    <button class="action-button start-btn" data-section="sentence">🎤 Start Speaking</button>
+                    <button class="action-button stop-btn" data-section="sentence" disabled>⏹️ Stop Speaking</button>
+                    <button class="action-button playback-btn" data-section="sentence" disabled>▶️ Play My Voice</button>
+                </div>
+                <div class="result-container">
+                    <h3>I heard you say:</h3>
+                    <div class="speech-result" data-section="sentence">
+                        <p class="placeholder">Your sentence will appear here.</p>
+                    </div>
+                </div>
+                <div class="feedback-container">
+                    <div class="feedback-message" data-section="sentence"></div>
+                </div>
+            </section>
+
+            <section class="practice-section definition-practice">
+                <h2>3. Practice the Definition</h2>
+                <div class="display-area">
+                    <p id="current-definition" class="current-text definition-text">A word used when meeting someone.</p>
+                </div>
+                <div class="audio-controls">
+                    <button class="action-button listen-btn" data-section="definition">🔊 Listen</button>
+                    <button class="action-button start-btn" data-section="definition">🎤 Start Speaking</button>
+                    <button class="action-button stop-btn" data-section="definition" disabled>⏹️ Stop Speaking</button>
+                    <button class="action-button playback-btn" data-section="definition" disabled>▶️ Play My Voice</button>
+                </div>
+                <div class="result-container">
+                    <h3>I heard you say:</h3>
+                    <div class="speech-result" data-section="definition">
+                        <p class="placeholder">Your definition will appear here.</p>
+                    </div>
+                </div>
+                <div class="feedback-container">
+                    <div class="feedback-message" data-section="definition"></div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Created to help children practice pronunciation</p>
+        </footer>
+    </div>
+
+    <div id="permissions-overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2>We Need Your Permission</h2>
+            <p>To practice pronunciation, we need to use your microphone. Please click "Allow" when your browser asks for permission.</p>
+            <button id="permissions-ok" class="action-button">Got it!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
